@@ -14,7 +14,8 @@ if __name__ == "__main__":
         host="localhost",
         username=argv[1],
         password=argv[2],
-        db=argv[3]
+        db=argv[3],
+        charset="utf8"
     )
     cur = db.cursor()
     cur.execute("SELECT * FROM states ORDER BY id ASC")
