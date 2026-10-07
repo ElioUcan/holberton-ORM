@@ -18,7 +18,8 @@ if __name__ == "__main__":
     )
     state_name = argv[4]
     cur = db.cursor()
-    cur.execute("SELECT * FROM states WHERE name = '%' ".format(state_name))
+    cur.execute("""SELECT * FROM states WHERE name = '{}' 
+    ORDER BY id ASC""".format(state_name))
     rows = cur.fetchall()
     for row in rows:
         print(row)
