@@ -19,7 +19,7 @@ if __name__ == "__main__":
     state_name = argv[4]
     cur = db.cursor()
     cur.execute(
-        """SELECT * FROM states WHERE name BINARY = '{}'
+        """SELECT * FROM states WHERE BINARY name = '{}'
     ORDER BY states.id ASC""".format(state_name)
     )
     rows = cur.fetchall()
