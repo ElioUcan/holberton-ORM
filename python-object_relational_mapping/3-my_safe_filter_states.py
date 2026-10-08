@@ -2,7 +2,7 @@
 
 """
 Module that takes an argument and displays all the
-values in the states table
+values in the states table without any injection
 """
 
 import MySQLdb
