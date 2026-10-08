@@ -19,8 +19,8 @@ if __name__ == "__main__":
     state_name = argv[4]
     cur = db.cursor()
     cur.execute(
-        """SELECT * FROM states WHERE BINARY name = '{}'
-    ORDER BY states.id ASC""".format(state_name)
+        """SELECT * FROM states WHERE BINARY name = '%s'
+    ORDER BY states.id ASC""", state_name
     )
     rows = cur.fetchall()
     for row in rows:
