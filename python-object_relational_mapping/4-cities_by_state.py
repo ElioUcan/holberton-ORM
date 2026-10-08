@@ -14,7 +14,8 @@ if __name__ == "__main__":
         host="localhost", port=3306, user=argv[1], passwd=argv[2], db=argv[3]
     )
     cur = db.cursor()
-    cur.execute("SELECT * FROM cities ORDER BY cities.id ASC")
+    cur.execute("""SELECT s.id, c.name, s.name  FROM states s
+        JOIN cities c ON s.id=c.state_id ORDER BY c.id ASC""")
     rows = cur.fetchall()
     for row in rows:
         print(row)
