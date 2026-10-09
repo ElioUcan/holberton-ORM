@@ -3,7 +3,7 @@
 """Module of sqlachemy"""
 
 from sqlalchemy import Column, Integer, String, create_engine
-from mysqldblchemy.ext.declarative import declarative_base
+from sqldblchemy.ext.declarative import declarative_base
 from sys import argv
 
 Base = declarative_base()
