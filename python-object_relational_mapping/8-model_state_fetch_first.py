@@ -9,7 +9,6 @@ from model_state import Base, State
 
 
 if __name__ == "__main__":
-
     user = argv[1]
     passwd = argv[2]
     db = argv[3]
