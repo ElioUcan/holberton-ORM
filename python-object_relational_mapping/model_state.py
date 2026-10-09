@@ -18,8 +18,8 @@ class State(Base):
 
 
 if __name__ == "__main__":
-    passwd = argv[2]
     user = argv[1]
-    table = argv[3]
-    engine = create_engine(f"mysql+mysqldb://{user}:{passwd}@localhost:3306/{table}")
+    passwd = argv[2]
+    db = argv[3]
+    engine = create_engine(f"mysql+mysqldb://{user}:{passwd}@localhost:3306/{db}")
     Base.metadata.create_all(engine)
