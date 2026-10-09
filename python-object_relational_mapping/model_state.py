@@ -13,7 +13,7 @@ class State(Base):
     name = Column(String(128), nullable=False)
 
     if __name_- == "__main__":
-        passwd = argv[2]
-        user = argv[1]
+        passwd = argv[1]
+        user = argv[2]
         engine = create_engine(f'mysql+mysqldb://{user}:{passwd}@localhost:3306/states')
         Base.metadata.create_all(engine)
