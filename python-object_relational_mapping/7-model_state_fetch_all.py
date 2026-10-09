@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 
 """Module of sqlachemy"""
+
 from sqlachemy import create_engine
-from model_state import import Base, State
+from model_state import Base, State
 from sys import argv
 
 Base = declarative_base()
