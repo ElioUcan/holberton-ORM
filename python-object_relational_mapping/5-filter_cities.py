@@ -19,7 +19,7 @@ if __name__ == "__main__":
         (state_name,),
     )
     rows = cur.fetchall()
-    for row in rows:
-        print(", ".join(row[1]))
+    cities = [item[1] for item in rows]
+    print(", ".join(cities))
     cur.close()
     db.close()
