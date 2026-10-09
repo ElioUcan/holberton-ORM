@@ -12,8 +12,11 @@ if __name__ == "__main__":
     state_name = argv[4]
     cur = db.cursor()
     cur.execute(
-        "SELECT c.id, c.name FROM cities c JOIN states s ON s.id = c.state_id WHERE s.name = %sORDER BY c.id ASC",
-        (state_name,)
+        """SELECT c.id, c.name FROM cities c 
+        JOIN states s ON s.id = c.state_id 
+        WHERE s.name = %s 
+        ORDER BY c.id ASC""",
+        (state_name,),
     )
     rows = cur.fetchall()
     for row in rows:
