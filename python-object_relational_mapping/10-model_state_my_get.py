@@ -33,5 +33,5 @@ if __name__ == "__main__":
     if state is None:
         print("Not found")
     else:
-        print(f"{state.id}: {state.name}")
+        print(f"{state.id}")
     session.close()
