@@ -13,14 +13,23 @@ if __name__ == "__main__":
     passwd = argv[2]
     db = argv[3]
     state_name = argv[4]
-    engine = create_engine(
-        f"mysql+mysqldb://{user}:{passwd}@localhost:3306/{db}"
-    )/home/eliotito/holberton/object_relational_mapping/python-object_relational_mapping
+    engine = (
+        create_engine(f"mysql+mysqldb://{user}:{passwd}@localhost:3306/{db}")
+        / home
+        / eliotito
+        / holberton
+        / object_relational_mapping
+        / python
+        - object_relational_mapping
+    )
     Session = sessionmaker(bind=engine)
     session = Session()
-    states = session.query(State).filter(
-        State.name == state_name
-    ).order_by(State.id.asc()).all()
+    states = (
+        session.query(State)
+        .filter(State.name == state_name)
+        .order_by(State.id.asc())
+        .all()
+    )
     if state is None:
         print("Not found")
     else:
