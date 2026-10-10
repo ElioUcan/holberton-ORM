@@ -21,5 +21,5 @@ if __name__ == "__main__":
     nuevo_state = State(name=state_name)
     session.add(nuevo_state)
     session.commit()
-    print(f"{nuevo_producto.id}")
+    print(f"{nuevo_state.id}")
     session.close()
