@@ -8,11 +8,10 @@ from model_state import Base
 
 class City(Base):
     """Creates a DB"""
+
     __tablename__ = "cities"
     id = Column(
-        Integer, primary_key=True, nullable=False,
-        unique=True, autoincrement=True
+        Integer, primary_key=True, nullable=False, unique=True, autoincrement=True
     )
     name = Column(String(128), nullable=False)
-    state_id = Column(Integer, ForeignKey('states.id'), nullable=False
-    state = relationship("State", back_populates="cities")
+    state_id = Column(Integer, ForeignKey("states.id"), nullable=False)
