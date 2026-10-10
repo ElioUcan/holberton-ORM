@@ -18,7 +18,7 @@ if __name__ == "__main__":
     )
     Session = sessionmaker(bind=engine)
     session = Session()
-    states = (
+    state = (
         session.query(State)
         .filter(State.name == state_name)
         .order_by(State.id.asc())
