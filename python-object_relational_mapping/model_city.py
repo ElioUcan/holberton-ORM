@@ -3,9 +3,7 @@
 """Module of sqlachemy"""
 
 from sqlalchemy import Column, Integer, String, ForeignKey
-from sqlalchemy.ext.declarative import declarative_base, relationship
-
-Base = declarative_base()
+from model_state import Base
 
 
 class City(Base):
@@ -16,5 +14,5 @@ class City(Base):
         unique=True, autoincrement=True
     )
     name = Column(String(128), nullable=False)
-    state_id = Column(Integer, nullable=False, ForeignKey('states.id'))
+    state_id = Column(Integer, ForeignKey('states.id'), nullable=False
     state = relationship("State", back_populates="cities")

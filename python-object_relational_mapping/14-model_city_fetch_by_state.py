@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 
+"""Prints all elements of City"""
+
 from model_state import State, Base
 from model_city import City
 from sqlalchemy import create_engine
@@ -17,5 +19,11 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    results  = session.query(City).order_by(City.id)
+    results = (session.query(State, City)
+    .filter(State.id == City.state_id)
+    .order_by(City.id.asc())
+    .all()
+    )
+    for state, city in results:
+        print(f"{state.name}: ({city.id}) {city.name}")
     session.close()
