@@ -13,9 +13,7 @@ if __name__ == "__main__":
     passwd = argv[2]
     db = argv[3]
     state_name = argv[4]
-    engine = (
-        create_engine(f"mysql+mysqldb://{user}:{passwd}@localhost:3306/{db}")
-    )
+    engine = create_engine(f"mysql+mysqldb://{user}:{passwd}@localhost:3306/{db}")
     Session = sessionmaker(bind=engine)
     session = Session()
     nuevo_producto = Product(name=state_name)
